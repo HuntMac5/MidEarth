@@ -2,9 +2,9 @@ package mid.classes.management;
 
 public abstract class MiddleEarthCharacter {
 
-	String name;
-	Double health;
-	Double power;
+	private String name;
+	private Double health;
+	private Double power;
 	
 	public abstract boolean attack(MiddleEarthCharacter target);
 	//a standard attack should be whatever the character's power is

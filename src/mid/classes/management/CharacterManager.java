@@ -3,8 +3,8 @@ package mid.classes.management;
 import mid.classes.subclasses.HumanCharacter;
 
 public class CharacterManager {
-	MiddleEarthCharacter[] characters;
-	int size;
+	private MiddleEarthCharacter[] characters;
+	private int size;
 
 	boolean addCharacter(MiddleEarthCharacter c) {
 		//adds character, doubles if array size if full
@@ -43,6 +43,14 @@ public class CharacterManager {
 		}
 		
 		
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
 	}
 }
 
