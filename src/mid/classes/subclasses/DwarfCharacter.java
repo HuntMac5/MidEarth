@@ -29,9 +29,10 @@ public class DwarfCharacter extends MiddleEarthCharacter{
 			target.setHealth(hp);
 			
 			System.out.println("Attack Successful! ");
-			return true;}
+			return true;
+			}
 		
-		else return false;
+		else return false; 
 	}
 
 	@Override
