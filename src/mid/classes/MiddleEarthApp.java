@@ -9,7 +9,10 @@ import mid.classes.subclasses.WizardCharacter;
 public class MiddleEarthApp {
 
 	//creating interface options!
-	
+	/*
+	 * 
+	 * 
+	 */
 	public static void main(String[] args) {
 		
 		DwarfCharacter dwarf = new DwarfCharacter();
