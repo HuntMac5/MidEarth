@@ -7,8 +7,8 @@ public class ElfCharacter extends MiddleEarthCharacter{
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		// 1.5x damage against ORC
-		// 0x damage against DWARF ELF
-		// 1x damage against HUMAN WIZARD
+		// 0x damage against DWARF & ELF
+		// 1x damage against HUMAN & WIZARD
 		double hp = 0; 
 		
 		if( target instanceof OrcCharacter){

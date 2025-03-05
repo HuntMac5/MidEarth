@@ -3,12 +3,13 @@ package mid.classes.subclasses;
 import mid.classes.management.MiddleEarthCharacter;
 
 public class DwarfCharacter extends MiddleEarthCharacter{
-
+	
+	
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		// 1.5x damage against ELF
-		// 0x damage against WIZARD DWARF
-		// 1x damage against HUMAN ORC
+		// 0x damage against WIZARD & DWARF
+		// 1x damage against HUMAN  & ORC
 		double hp = 0; 
 		
 		if( target instanceof ElfCharacter){
