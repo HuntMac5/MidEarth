@@ -1,7 +1,7 @@
 package mid.classes.management;
 
 public class CharacterManager {
-	int size = 1;
+	int size = 0;
 	MiddleEarthCharacter[] characters = new MiddleEarthCharacter[size];
 	
     /**
@@ -10,19 +10,17 @@ public class CharacterManager {
 	 * @return true if successfully added, else false
 	 */
 	public boolean addCharacter(MiddleEarthCharacter c) {
-		System.out.println("There are " + characters.length + " many spots in characters");
+		//System.out.println("There are " + characters.length + " many spots in characters");
 		if(c == null) {
 			return false;
 		}
 		if (size == characters.length ) {
-			resizeArray();
-			characters[size] = c;
-			size++;
+			resizeArray();			
 			return true;
 			
 		}
 		characters[size] = c;
-		size++;
+		++size;
 		return true;
 	}
 
@@ -79,7 +77,8 @@ public class CharacterManager {
 	public void displayAllCharacters(){
 		System.out.println("Printing out all characters...");
 		for(int i = 0; i < size; i++){
-			//characters[i].displayInfo();			
+			
+			characters[0].displayInfo();			
 		}				
 	}
 	

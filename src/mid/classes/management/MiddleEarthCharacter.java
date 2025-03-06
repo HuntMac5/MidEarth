@@ -20,7 +20,7 @@ public abstract class MiddleEarthCharacter {
 	
 	
 	public void displayInfo() {
-		System.out.println("Character [Name: " + name + ", " +this.getRace() + ", Health: " + health + ", Power: " + power + "]");
+		System.out.println("Character [Name: " + name + ", " + this.getRace() + ", Health: " + health + ", Power: " + power + "]");
 	}
 
 	//creating getters and setters for making a middle earth character!
