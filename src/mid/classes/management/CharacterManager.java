@@ -16,6 +16,10 @@ public class CharacterManager {
 		}
 		if (size == characters.length ) {
 			resizeArray();
+			characters[size] = c;
+			size++;
+			return true;
+			
 		}
 		characters[size] = c;
 		size++;
@@ -75,7 +79,7 @@ public class CharacterManager {
 	public void displayAllCharacters(){
 		System.out.println("Printing out all characters...");
 		for(int i = 0; i < size; i++){
-			characters[i] .displayInfo();			
+			//characters[i].displayInfo();			
 		}				
 	}
 	
