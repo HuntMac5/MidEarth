@@ -1,5 +1,7 @@
 package mid.classes;
 
+import mid.classes.management.CharacterManager;
+import mid.classes.management.MiddleEarthCharacter;
 import mid.classes.subclasses.DwarfCharacter;
 import mid.classes.subclasses.ElfCharacter;
 import mid.classes.subclasses.HumanCharacter;
@@ -12,8 +14,13 @@ public class MiddleEarthApp {
 	//creating interface options!
 	
 	public static void main(String[] args){
-		MiddleEarthCouncil.getInstance();
-
+		MiddleEarthCouncil middleEarthCouncil = MiddleEarthCouncil.getInstance();
+		CharacterManager manager = middleEarthCouncil.getCharacterManager();
+		
+		if(manager == null) {
+			System.out.println("This thing is null btw");
+		}
+		
 		boolean loop = true;
 		while(loop) {
 			
@@ -31,77 +38,70 @@ public class MiddleEarthApp {
 			
 		switch(answer) {
 			case 1:
-				System.out.println("One");
-				break;
+				System.out.println("Choose a character class from 1 to 5: ");
+				
+				System.out.println("1. Elf ");
+				System.out.println("2. Dwarf ");
+				System.out.println("3. Human  ");
+				System.out.println("4. Orc ");
+				System.out.print("5. Wizard ");
+				
+				int answer1 = input.nextInt();
+				
+				switch(answer1) {
+				case 1: 
+					ElfCharacter elf = new ElfCharacter("N/A", null, null);
+					manager.addCharacter(elf);
+					break;
+				case 2: 
+					DwarfCharacter dwarf = new DwarfCharacter("N/A", null, null);
+					manager.addCharacter(dwarf);
+					break;
+				case 3: 
+					HumanCharacter human = new HumanCharacter("N/A", null, null);
+					manager.addCharacter(human);
+					break;
+				case 4: 
+					OrcCharacter orc = new OrcCharacter("N/A", null, null);
+					manager.addCharacter(orc);
+					break;
+				case 5: 
+					WizardCharacter wiz = new WizardCharacter("N/A", null, null);
+					manager.addCharacter(wiz);
+					break;
+				default:
+					System.out.print("Invalid entry... Please choose a number from 1 to 5");
+					break;
+				}
+				
+				
+				
 			case 2:
-				System.out.println("Two");
+				System.out.println("Viewing all characters...");
+				//manager.displayAllCharacters();
 				break;
 			case 3:
-				System.out.println("Three");
+				System.out.println("Update a character ");
 				break;
 			case 4:
-				System.out.println("Four");
+				System.out.println("Delete a character ");
 				break;
 			case 5:
-				System.out.println("Five");
+				System.out.println("Execute all character's attack options ");
 				break;
 			case 6:
 				System.out.println("Closing program...");
 				loop = false;
 				break;
 			default:
-				System.out.println("Invalid entry... Please choose a number from 1 to 5");
+				System.out.println("Invalid entry... Please choose a number from 1 to 6");
+				break;
 			}
 		}
 		System.out.println("Program has closed.");
-		//input = new Scanner(System.out);
 		
 		
 	}
-	/*{
-		
-		DwarfCharacter dwarf = new DwarfCharacter();
-		dwarf.setName("Dilbo");
-		dwarf.setHealth(100.00);
-		dwarf.setPower(50.00);
-		dwarf.displayInfo();
-		
-		ElfCharacter elf = new ElfCharacter();
-		elf.setName("Ilbo");
-		elf.setHealth(100.00);
-		elf.setPower(50.00);
-		elf.displayInfo();
-		
-		HumanCharacter human = new HumanCharacter();
-		human.setName("Hilbo");
-		human.setHealth(100.00);
-		human.setPower(50.00);
-		human.displayInfo();
-		
-		OrcCharacter orc = new OrcCharacter();
-		orc.setName("Olbo");
-		orc.setHealth(100.00);
-		orc.setPower(50.00);
-		orc.displayInfo();
-		
-		WizardCharacter wiz = new WizardCharacter();
-		wiz.setName("Wilbo");
-		wiz.setHealth(100.00);
-		wiz.setPower(50.00);
-		wiz.displayInfo();
-		
-			
-		dwarf.attack(elf);
-		dwarf.attack(human);
-		dwarf.attack(orc);
-		dwarf.attack(wiz);
-		
-		dwarf.displayInfo();
-		elf.displayInfo();
-		human.displayInfo();
-		orc.displayInfo();
-		wiz.displayInfo();
-	}
-	*/
+	
 }
 

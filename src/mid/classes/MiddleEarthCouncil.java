@@ -1,9 +1,10 @@
 package mid.classes;
 
-//import mid.classes.management.CharacterManager;
+import mid.classes.management.CharacterManager;
 
 public class MiddleEarthCouncil {
 	private static MiddleEarthCouncil instance;
+	public CharacterManager manager = new CharacterManager();
 	
 	private MiddleEarthCouncil() {}
 	
@@ -13,6 +14,8 @@ public class MiddleEarthCouncil {
 		}
 		return instance;
 	}
-
-//		CharacterManager getCharacterManager(); //what does character manager need to do???
+	
+		public CharacterManager getCharacterManager() { //what does character manager need to do???
+			return manager;
+		}
 }

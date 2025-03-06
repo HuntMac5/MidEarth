@@ -1,22 +1,24 @@
 package mid.classes.management;
 
 public class CharacterManager {
-	private MiddleEarthCharacter[] characters;
-	private int size;
-
+	int size = 1;
+	MiddleEarthCharacter[] characters = new MiddleEarthCharacter[size];
+	
     /**
 	 * adds character to array
 	 * @param c the character to add 
 	 * @return true if successfully added, else false
 	 */
-	boolean addCharacter(MiddleEarthCharacter c) {
+	public boolean addCharacter(MiddleEarthCharacter c) {
+		System.out.println("There are " + characters.length + " many spots in characters");
 		if(c == null) {
 			return false;
 		}
 		if (size == characters.length ) {
 			resizeArray();
 		}
-		characters[size++] = c;
+		characters[size] = c;
+		size++;
 		return true;
 	}
 
@@ -25,7 +27,7 @@ public class CharacterManager {
 	 * @param name the name of characters is searched for
 	 * @return character if found, else null
 	 */
-	MiddleEarthCharacter getCharacter(String name) {
+	public MiddleEarthCharacter getCharacter(String name) {
 		for (int i = 0; i < size; i++) {
 			if (characters[i].getName().equals(name) ) {
 				return characters[i];
@@ -34,7 +36,7 @@ public class CharacterManager {
 		return null;
 	}
 	
-	boolean updateCharacter(MiddleEarthCharacter c, String name, int health, int power) {
+	public boolean updateCharacter(MiddleEarthCharacter c, String name, int health, int power) {
 		if(c != null){
 			c.setHealth((double) health);
 			c.setName(name);
@@ -50,7 +52,7 @@ public class CharacterManager {
 	 * @param c the character to delete
 	 * @return true if deleted, else false
 	 */
-	boolean deleteCharacter(MiddleEarthCharacter c){
+	public boolean deleteCharacter(MiddleEarthCharacter c){
 		if (c == null) {
 			return false;
 		}
@@ -70,7 +72,7 @@ public class CharacterManager {
 	/**
 	 * displays characters in system
 	 */
-	void displayAllCharacters(){
+	public void displayAllCharacters(){
 		System.out.println("Printing out all characters...");
 		for(int i = 0; i < size; i++){
 			characters[i] .displayInfo();			
@@ -80,18 +82,15 @@ public class CharacterManager {
 	/**
 	 * Doubles character array when full 
 	 */
-	public void resizeArray() {
+	void resizeArray() {
+		if(characters.length == 0) {
+			MiddleEarthCharacter[] newArray = new MiddleEarthCharacter[characters.length+1];
+			System.arraycopy(characters, 0, newArray, 0, characters.length);
+			characters = newArray;
+		}
 		MiddleEarthCharacter[] newArray = new MiddleEarthCharacter[characters.length * 2];
 		System.arraycopy(characters, 0, newArray, 0, characters.length);
 		characters = newArray;
-	}
-
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
 	}
 }
 
