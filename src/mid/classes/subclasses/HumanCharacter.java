@@ -9,7 +9,16 @@ public class HumanCharacter extends MiddleEarthCharacter{
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
+	/**
+	 * attacks another Middle Earth Character
+	 * 
+	 * No effect on Human and Orc.
+	 * 1.5x damage vs Wizard.
+	 * Normal damage against Elf and Dwarf.
+	 * 
+	 * @param target character being attacked.	
+	 * @return returns true if attack successful, else false.
+	 */
 	public boolean attack(MiddleEarthCharacter target) {
 		// 1.5x damage against WIZARD
 		// 0x damage against ORC & HUMAN
@@ -38,7 +47,12 @@ public class HumanCharacter extends MiddleEarthCharacter{
 		
 		else return false;
 	}
-
+	
+	/**
+	 * returns character race
+	 * 
+	 * @return returns "Race: Human"
+	 */
 	@Override
 	public String getRace() {
 		return "Race: Human";
