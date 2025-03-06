@@ -4,7 +4,12 @@ import mid.classes.management.MiddleEarthCharacter;
 
 public class DwarfCharacter extends MiddleEarthCharacter{
 	
-	
+
+	public DwarfCharacter(String name, Double health, Double power) {
+		super(name, health, power);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		// 1.5x damage against ELF
@@ -40,6 +45,8 @@ public class DwarfCharacter extends MiddleEarthCharacter{
 	public String getRace() {
 		return "Race: Dwarf";
 	}
+
+
 
 
 

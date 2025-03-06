@@ -5,12 +5,59 @@ import mid.classes.subclasses.ElfCharacter;
 import mid.classes.subclasses.HumanCharacter;
 import mid.classes.subclasses.OrcCharacter;
 import mid.classes.subclasses.WizardCharacter;
+import java.util.Scanner;
 
 public class MiddleEarthApp {
 
 	//creating interface options!
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
+		MiddleEarthCouncil.getInstance();
+
+		boolean loop = true;
+		while(loop) {
+			
+			Scanner input = new Scanner(System.in);
+			System.out.println("Choose an option from 1 to 6: ");
+			System.out.println("1. Add a new character. ");
+			System.out.println("2. View all characters. ");
+			System.out.println("3. Update a character.  ");
+			System.out.println("4. Delete a character. ");
+			System.out.println("5. Execute all characters’ attack actions. ");
+			System.out.println("6. Exit the program ");
+			
+			int answer = input.nextInt();
+			System.out.println("You have selected " + answer);
+			
+		switch(answer) {
+			case 1:
+				System.out.println("One");
+				break;
+			case 2:
+				System.out.println("Two");
+				break;
+			case 3:
+				System.out.println("Three");
+				break;
+			case 4:
+				System.out.println("Four");
+				break;
+			case 5:
+				System.out.println("Five");
+				break;
+			case 6:
+				System.out.println("Closing program...");
+				loop = false;
+				break;
+			default:
+				System.out.println("Invalid entry... Please choose a number from 1 to 5");
+			}
+		}
+		System.out.println("Program has closed.");
+		
+		
+	}
+	/*{
 		
 		DwarfCharacter dwarf = new DwarfCharacter();
 		dwarf.setName("Dilbo");
@@ -54,4 +101,6 @@ public class MiddleEarthApp {
 		orc.displayInfo();
 		wiz.displayInfo();
 	}
+	*/
 }
+

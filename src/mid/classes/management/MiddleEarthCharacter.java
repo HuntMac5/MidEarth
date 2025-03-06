@@ -6,6 +6,14 @@ public abstract class MiddleEarthCharacter {
 	private Double health;
 	private Double power;
 	
+	public  MiddleEarthCharacter (String name, Double health, Double power)	{
+		this.setName(name);
+		this.setHealth(health);
+		this.setPower(power);
+		
+		return;
+	}
+	
 	public abstract boolean attack(MiddleEarthCharacter target);
 	//a standard attack should be whatever the character's power is
 	public abstract String getRace();

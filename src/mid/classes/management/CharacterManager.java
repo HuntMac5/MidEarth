@@ -16,7 +16,7 @@ public class CharacterManager {
 	}
 
 	MiddleEarthCharacter getCharacter(String name) {
-		MiddleEarthCharacter c = new HumanCharacter();
+		MiddleEarthCharacter c = new HumanCharacter("Bilbo", 10.0, 10.0);
 		return c;
 	}
 	

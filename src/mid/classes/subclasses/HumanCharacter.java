@@ -4,6 +4,11 @@ import mid.classes.management.MiddleEarthCharacter;
 
 public class HumanCharacter extends MiddleEarthCharacter{
 
+	public HumanCharacter(String name, Double health, Double power) {
+		super(name, health, power);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		// 1.5x damage against WIZARD
