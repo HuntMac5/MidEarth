@@ -54,6 +54,7 @@ public class MiddleEarthApp {
 			}
 		}
 		System.out.println("Program has closed.");
+		input = new Scanner(System.out);
 		
 		
 	}
